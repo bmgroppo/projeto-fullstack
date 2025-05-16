@@ -95,19 +95,6 @@ main{
    
 }
 
-button{
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    padding: 0.5em 1em;
-    cursor: pointer;
-    border-radius: 3px;
-}
-
-button:hover{
-    background-color: #45a049;
-}
-
 #carrinho h2 {
     text-align: center;
     margin-bottom: 10px;
@@ -122,3 +109,18 @@ button:hover{
     padding: 5px;
     border-bottom: 1px solid #ddd;
 }
+
+.remover {
+    background: none !important;
+    border: none;
+    color: red !important; /* Forçando a cor vermelha */
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 0; /* Removendo espaçamento extra */
+}
+
+.remover:hover {
+    color: darkred !important; /* Forçando o efeito de hover */
+}
+
