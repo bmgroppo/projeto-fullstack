@@ -9,11 +9,30 @@ botoes.forEach(botao => {
         const nome = botao.getAttribute('data-nome');
         const preco = parseFloat(botao.getAttribute('data-preco'));
 
+        // Criar elemento <li> para o item
         const li = document.createElement ('li');
-        li.textContent = '${nome} - R$ ${preço},00';
+        li.textContent = `${nome} - R$ ${preco},00`;
+       
+        // Criar botão de remover
+        const botaoRemover = document.createElement('button');
+        botaoRemover.textContent = '🗑️'; // Ícone de lixeira
+        botaoRemover.classList.add('remover');
+
+        // Adicionar botão ao <li>
+        li.appendChild(botaoRemover);
         itensCarrinho.appendChild(li);
 
+              
+        // Atualizar total
         totalPreco += preco;
         total.textContent = totalPreco.toFixed(0);
+
+        // **Evento para remover item**
+        botaoRemover.addEventListener('click', () => {
+            li.remove(); // Remove o item do carrinho
+            totalPreco -= preco; // Atualiza o total corretamente
+            total.textContent = totalPreco.toFixed(0);
+        });
+        
     });
 });
