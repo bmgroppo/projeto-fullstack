@@ -12,20 +12,20 @@ botoes.forEach(botao => {
         // Criar elemento <li> para o item
         const li = document.createElement ('li');
         li.textContent = `${nome} - R$ ${preco},00`;
-       
+        itensCarrinho.appendChild(li);
+
         // Criar botão de remover
         const botaoRemover = document.createElement('button');
         botaoRemover.textContent = '🗑️'; // Ícone de lixeira
         botaoRemover.classList.add('remover');
-
+         
         // Adicionar botão ao <li>
-        li.appendChild(botaoRemover);
-        itensCarrinho.appendChild(li);
-
-              
+        li.appendChild(botaoRemover);              
+       
         // Atualizar total
         totalPreco += preco;
         total.textContent = totalPreco.toFixed(0);
+    
 
         // **Evento para remover item**
         botaoRemover.addEventListener('click', () => {
